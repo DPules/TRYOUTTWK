@@ -268,12 +268,7 @@ const soal = [
   },
   {
     t: "Anggota Paskibraka setelah selesai bertugas disebut?",
-    p: [
-      "Veteran",
-      "Purna Paskibraka Indonesia",
-      "Duta Negara",
-      "Kader Nasional",
-    ],
+    p: ["Veteran", "Purna Paskibraka", "Duta Negara", "Kader Nasional"],
     j: 1,
   },
   {
