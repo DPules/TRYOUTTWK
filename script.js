@@ -1,7 +1,7 @@
 const API_URL =
-  "https://script.google.com/macros/s/AKfycbwlgFhTDWxeXnyuWOSaE3DBPpy6xUG0bT6f_wT1OpqCsImxnD0Rj95hcKEPYG_cDDls/exec";
+  "https://script.google.com/macros/s/AKfycbwuvrXFMQgGrjhGQ-dD_vo0v2W_P5lCUd7SaY_x82JNCl5wxC2985_bsAo1o5wrTJM/exec";
 const perHalaman = 3;
-let waktu = 1800;
+let waktu = 1200;
 
 let halaman = 0;
 let timer;
@@ -11,446 +11,177 @@ let jawaban = {};
 
 const soal = [
   {
-t: "Makna utama Pancasila sebagai ideologi terbuka adalah?",
-p: [
-  "Dapat diubah seluruhnya sesuai perkembangan zaman",
-  "Memiliki nilai dasar tetap namun nilai instrumental dapat berkembang",
-  "Mengikuti ideologi negara maju",
-  "Bersifat sementara"
-],
-j: 1,
-},
-
-{
-t: "Rumusan Pancasila yang sah tercantum dalam?",
-p: [
-  "Piagam Jakarta",
-  "Pembukaan UUD 1945 alinea IV",
-  "Batang Tubuh UUD 1945",
-  "Tap MPR No. II/MPR/1978"
-],
-j: 1,
-},
-
-{
-t: "Tokoh yang pertama kali mengusulkan istilah Pancasila dalam sidang BPUPKI adalah?",
-p: [
-  "Mohammad Yamin",
-  "Soepomo",
-  "Soekarno",
-  "Mohammad Hatta"
-],
-j: 2,
-},
-
-{
-t: "BPUPKI dibentuk pada tanggal?",
-p: [
-  "29 April 1945",
-  "1 Juni 1945",
-  "7 Agustus 1945",
-  "17 Agustus 1945"
-],
-j: 0,
-},
-
-{
-t: "Tujuan utama dibentuknya Paskibraka adalah?",
-p: [
-  "Mencari siswa berprestasi akademik",
-  "Menyiapkan generasi muda berkarakter Pancasila melalui pengibaran bendera",
-  "Membentuk pasukan militer pelajar",
-  "Kegiatan seremonial tahunan"
-],
-j: 1,
-},
-
-{
-t: "Pasukan pengibar bendera pertama kali dilaksanakan secara nasional pada tahun?",
-p: [
-  "1967",
-  "1968",
-  "1970",
-  "1972"
-],
-j: 1,
-},
-
-{
-t: "Tokoh yang menggagas pembentukan Paskibraka adalah?",
-p: [
-  "Idik Sulaeman",
-  "Husein Mutahar",
-  "Sarwo Edhie Wibowo",
-  "Ahmad Yani"
-],
-j: 1,
-},
-
-{
-t: "Makna formasi 17-8-45 dalam Paskibraka melambangkan?",
-p: [
-  "Jumlah anggota pasukan",
-  "Tanggal Proklamasi Kemerdekaan Indonesia",
-  "Jumlah provinsi Indonesia",
-  "Jumlah sila Pancasila"
-],
-j: 1,
-},
-
-{
-t: "Nilai utama yang harus dimiliki Paskibraka sesuai pembinaan ideologi Pancasila adalah?",
-p: [
-  "Kompetisi",
-  "Individualisme",
-  "Kedisiplinan dan gotong royong",
-  "Dominasi kelompok"
-],
-j: 2,
-},
-
-{
-t: "Makna nasionalisme dalam konteks Paskibraka adalah?",
-p: [
-  "Membanggakan bangsa lain",
-  "Kesetiaan kepada bangsa dan negara",
-  "Mengutamakan daerah",
-  "Menolak budaya luar"
-],
-j: 1,
-},
-
-{
-t: "Semboyan Bhinneka Tunggal Ika terdapat dalam kitab?",
-p: [
-  "Sutasoma",
-  "Negarakertagama",
-  "Pararaton",
-  "Arjunawiwaha"
-],
-j: 0,
-},
-
-{
-t: "Penulis kitab Sutasoma adalah?",
-p: [
-  "Mpu Tantular",
-  "Mpu Prapanca",
-  "Empu Kanwa",
-  "Mpu Sedah"
-],
-j: 0,
-},
-
-{
-t: "Tujuan negara Indonesia tercantum dalam?",
-p: [
-  "Pasal 1 UUD 1945",
-  "Pembukaan UUD 1945 alinea IV",
-  "Pasal 27 UUD 1945",
-  "Pasal 30 UUD 1945"
-],
-j: 1,
-},
-
-{
-t: "Sikap yang mencerminkan sila ke-3 Pancasila adalah?",
-p: [
-  "Mengutamakan kepentingan pribadi",
-  "Menjaga persatuan bangsa",
-  "Menghindari musyawarah",
-  "Bersikap individual"
-],
-j: 1,
-},
-
-{
-t: "Sidang pertama BPUPKI dilaksanakan pada tanggal?",
-p: [
-  "29 Mei – 1 Juni 1945",
-  "10 – 17 Juli 1945",
-  "1 – 7 Juni 1945",
-  "7 – 9 Agustus 1945"
-],
-j: 0,
-},
-
-{
-t: "PPKI dibentuk pada tanggal?",
-p: [
-  "7 Agustus 1945",
-  "9 Agustus 1945",
-  "10 Agustus 1945",
-  "12 Agustus 1945"
-],
-j: 0,
-},
-
-{
-t: "Makna utama pengibaran bendera Merah Putih bagi Paskibraka adalah?",
-p: [
-  "Seremonial tahunan",
-  "Simbol penghormatan terhadap perjuangan bangsa",
-  "Kegiatan lomba",
-  "Tradisi sekolah"
-],
-j: 1,
-},
-
-{
-t: "Bendera Merah Putih pertama kali dijahit oleh?",
-p: [
-  "RA Kartini",
-  "Fatmawati",
-  "Cut Nyak Dien",
-  "Martha Christina Tiahahu"
-],
-j: 1,
-},
-
-{
-t: "Peristiwa Rengasdengklok terjadi pada tanggal?",
-p: [
-  "16 Agustus 1945",
-  "15 Agustus 1945",
-  "17 Agustus 1945",
-  "14 Agustus 1945"
-],
-j: 0,
-},
-
-{
-t: "Tujuan peristiwa Rengasdengklok adalah?",
-p: [
-  "Mengamankan Soekarno-Hatta dari Jepang",
-  "Mempercepat proklamasi kemerdekaan",
-  "Menghindari konflik internal",
-  "Mengatur pemerintahan"
-],
-j: 1,
-},
-
-// 20 tambahan
-
-{
-t: "Nilai gotong royong dalam Paskibraka mencerminkan sila?",
-p: [
-  "Sila ke-1",
-  "Sila ke-2",
-  "Sila ke-3",
-  "Sila ke-5"
-],
-j: 2,
-},
-
-{
-t: "Perubahan Piagam Jakarta terjadi pada tanggal?",
-p: [
-  "17 Agustus 1945",
-  "18 Agustus 1945",
-  "16 Agustus 1945",
-  "19 Agustus 1945"
-],
-j: 1,
-},
-
-{
-t: "Makna integritas bagi anggota Paskibraka adalah?",
-p: [
-  "Konsisten antara perkataan dan tindakan",
-  "Menjaga popularitas",
-  "Mencari penghargaan",
-  "Menghindari tanggung jawab"
-],
-j: 0,
-},
-
-{
-t: "Pasal UUD 1945 yang mengatur bela negara adalah?",
-p: [
-  "Pasal 27 ayat (3)",
-  "Pasal 28",
-  "Pasal 29",
-  "Pasal 31"
-],
-j: 0,
-},
-
-{
-t: "Tokoh perumus dasar negara yang menyampaikan konsep negara integralistik adalah?",
-p: [
-  "Soepomo",
-  "Mohammad Yamin",
-  "Soekarno",
-  "Hatta"
-],
-j: 0,
-},
-
-{
-t: "Makna disiplin dalam Paskibraka adalah?",
-p: [
-  "Taat pada aturan dan waktu",
-  "Mengikuti perintah teman",
-  "Menghindari tugas",
-  "Bersikap bebas"
-],
-j: 0,
-},
-
-{
-t: "Lambang negara Indonesia adalah?",
-p: [
-  "Garuda Pancasila",
-  "Burung Rajawali",
-  "Garuda Nusantara",
-  "Elang Indonesia"
-],
-j: 0,
-},
-
-{
-t: "Jumlah bulu pada sayap Garuda melambangkan?",
-p: [
-  "17",
-  "8",
-  "45",
-  "17 Agustus 1945"
-],
-j: 3,
-},
-
-{
-t: "Makna warna merah pada bendera Indonesia adalah?",
-p: [
-  "Keberanian",
-  "Kesucian",
-  "Keadilan",
-  "Kemakmuran"
-],
-j: 0,
-},
-
-{
-t: "Makna warna putih pada bendera Indonesia adalah?",
-p: [
-  "Kesucian",
-  "Kejujuran",
-  "Kemakmuran",
-  "Persatuan"
-],
-j: 0,
-},
-
-{
-t: "Sikap utama yang harus dimiliki Paskibraka saat latihan adalah?",
-p: [
-  "Kerja sama",
-  "Kompetisi berlebihan",
-  "Egoisme",
-  "Individualisme"
-],
-j: 0,
-},
-
-{
-t: "Pembukaan UUD 1945 tidak dapat diubah karena?",
-p: [
-  "Merupakan norma hukum tertinggi",
-  "Memuat dasar negara",
-  "Kesepakatan nasional",
-  "Semua benar"
-],
-j: 3,
-},
-
-{
-t: "Makna persatuan dalam konteks keberagaman Indonesia adalah?",
-p: [
-  "Menyeragamkan budaya",
-  "Menghilangkan perbedaan",
-  "Menghargai perbedaan",
-  "Mengutamakan mayoritas"
-],
-j: 2,
-},
-
-{
-t: "Tujuan pembinaan ideologi Pancasila bagi Paskibraka adalah?",
-p: [
-  "Meningkatkan wawasan kebangsaan",
-  "Menjadi aparat negara",
-  "Menjadi pasukan militer",
-  "Kegiatan seremonial"
-],
-j: 0,
-},
-
-{
-t: "Peraturan BPIP No. 3 Tahun 2022 mengatur tentang?",
-p: [
-  "Pembentukan Paskibraka",
-  "Pembinaan ideologi Pancasila bagi Paskibraka",
-  "Upacara bendera",
-  "Latihan militer pelajar"
-],
-j: 1,
-},
-
-{
-t: "Nilai karakter utama dalam pembentukan Paskibraka adalah?",
-p: [
-  "Disiplin, tanggung jawab, nasionalisme",
-  "Popularitas",
-  "Kompetisi",
-  "Prestise"
-],
-j: 0,
-},
-
-{
-t: "Makna keteladanan bagi Paskibraka adalah?",
-p: [
-  "Menjadi contoh perilaku positif",
-  "Menjadi terkenal",
-  "Menjadi pemimpin organisasi",
-  "Menjadi juara lomba"
-],
-j: 0,
-},
-
-{
-t: "Perilaku yang mencerminkan nasionalisme adalah?",
-p: [
-  "Menggunakan produk dalam negeri",
-  "Menghina budaya lain",
-  "Mengutamakan kepentingan pribadi",
-  "Menolak perbedaan"
-],
-j: 0,
-},
-
-{
-t: "Pengamalan Pancasila harus dilakukan dalam?",
-p: [
-  "Kehidupan sehari-hari",
-  "Upacara saja",
-  "Kegiatan resmi saja",
-  "Lingkungan sekolah saja"
-],
-j: 0,
-},
-
-{
-t: "Paskibraka setelah bertugas diharapkan menjadi?",
-p: [
-  "Kader pemimpin bangsa berkarakter Pancasila",
-  "Petugas upacara sekolah",
-  "Anggota militer",
-  "Panitia kegiatan"
-],
-j: 0,
-}
+    t: "Pancasila ditetapkan sebagai dasar negara pada tanggal ....",
+    p: [
+      "1 Juni 1945",
+      "22 Juni 1945",
+      "17 Agustus 1945",
+      "18 Agustus 1945",
+      "20 Agustus 1945",
+    ],
+    j: 3,
+  },
+  {
+    t: "Tokoh yang pertama kali mengusulkan istilah Pancasila adalah ....",
+    p: [
+      "Mohammad Hatta",
+      "Soepomo",
+      "Ir. Soekarno",
+      "Mohammad Yamin",
+      "Ahmad Soebardjo",
+    ],
+    j: 2,
+  },
+  {
+    t: "Pancasila sebagai pandangan hidup bangsa berarti ....",
+    p: [
+      "Dasar hukum negara",
+      "Pedoman hidup masyarakat",
+      "Sumber kekuasaan negara",
+      "Peraturan tertulis negara",
+      "Dasar ekonomi negara",
+    ],
+    j: 1,
+  },
+  {
+    t: "Rumusan Pancasila terdapat dalam Pembukaan UUD 1945 alinea ke ....",
+    p: ["Pertama", "Kedua", "Ketiga", "Keempat", "Kelima"],
+    j: 3,
+  },
+  {
+    t: "Pancasila sebagai ideologi negara bersifat ....",
+    p: ["Tertutup", "Kaku", "Terbuka", "Mutlak", "Terbatas"],
+    j: 2,
+  },
+  {
+    t: "BPUPKI dibentuk pada tahun ....",
+    p: ["1943", "1944", "1945", "1946", "1947"],
+    j: 2,
+  },
+  {
+    t: "Sidang pertama BPUPKI membahas tentang ....",
+    p: ["Bentuk negara", "Dasar negara", "UUD", "Kabinet", "Ekonomi"],
+    j: 1,
+  },
+  {
+    t: "Panitia Sembilan menghasilkan ....",
+    p: [
+      "UUD 1945",
+      "Proklamasi",
+      "Piagam Jakarta",
+      "Dekrit Presiden",
+      "Konstitusi RIS",
+    ],
+    j: 2,
+  },
+  {
+    t: "Konstitusi negara Indonesia saat ini adalah ....",
+    p: [
+      "UUDS 1950",
+      "Konstitusi RIS",
+      "UUD 1945",
+      "UUD 1949",
+      "Piagam Jakarta",
+    ],
+    j: 2,
+  },
+  {
+    t: "Konstitusi berarti ....",
+    p: [
+      "Peraturan pemerintah",
+      "Hukum dasar negara",
+      "Undang-undang biasa",
+      "Keputusan presiden",
+      "Peraturan daerah",
+    ],
+    j: 1,
+  },
+  {
+    t: "UUD 1945 disahkan oleh ....",
+    p: ["BPUPKI", "PPKI", "MPR", "DPR", "Presiden"],
+    j: 1,
+  },
+  {
+    t: "Lembaga yang berwenang mengubah UUD 1945 adalah ....",
+    p: ["DPR", "Presiden", "MA", "MPR", "MK"],
+    j: 3,
+  },
+  {
+    t: "Pembukaan UUD 1945 tidak dapat diubah karena ....",
+    p: [
+      "Merupakan kesepakatan rakyat",
+      "Memuat dasar negara",
+      "Berisi sejarah",
+      "Memuat hukum",
+      "Tidak penting",
+    ],
+    j: 1,
+  },
+  {
+    t: "Pasal-pasal UUD 1945 dapat diubah melalui ....",
+    p: [
+      "Sidang DPR",
+      "Sidang Presiden",
+      "Sidang MPR",
+      "Sidang MA",
+      "Sidang MK",
+    ],
+    j: 2,
+  },
+  {
+    t: "Salah satu fungsi konstitusi adalah ....",
+    p: [
+      "Membatasi kekuasaan pemerintah",
+      "Mengatur pajak",
+      "Mengatur perdagangan",
+      "Mengatur sekolah",
+      "Mengatur budaya",
+    ],
+    j: 0,
+  },
+  {
+    t: "Pancasila sebagai dasar negara digunakan untuk ....",
+    p: [
+      "Pedoman hukum nasional",
+      "Mengatur ekonomi dunia",
+      "Mengatur budaya asing",
+      "Mengatur perdagangan internasional",
+      "Mengatur organisasi masyarakat",
+    ],
+    j: 0,
+  },
+  {
+    t: "Ideologi terbuka berarti ....",
+    p: [
+      "Tidak memiliki nilai",
+      "Dapat menyesuaikan perkembangan",
+      "Tidak tetap",
+      "Berubah setiap saat",
+      "Tidak memiliki aturan",
+    ],
+    j: 1,
+  },
+  {
+    t: "UUD 1945 pertama kali berlaku pada tahun ....",
+    p: ["1944", "1945", "1946", "1947", "1948"],
+    j: 1,
+  },
+  {
+    t: "Tujuan negara Indonesia terdapat pada Pembukaan UUD 1945 alinea ....",
+    p: ["Pertama", "Kedua", "Ketiga", "Keempat", "Kelima"],
+    j: 3,
+  },
+  {
+    t: "Salah satu tujuan negara Indonesia adalah ....",
+    p: [
+      "Menguasai dunia",
+      "Melindungi segenap bangsa Indonesia",
+      "Mengembangkan budaya asing",
+      "Mencari keuntungan negara",
+      "Menguasai perdagangan dunia",
+    ],
+    j: 1,
+  },
 ];
 
 function mulaiUjian() {
@@ -458,10 +189,7 @@ function mulaiUjian() {
     return alert("Lengkapi data!");
 
   localStorage.setItem("nama", nama.value);
-  localStorage.setItem("gender", gender.value);
   localStorage.setItem("sekolah", sekolah.value);
-  localStorage.setItem("tinggibadan", tinggibadan.value);
-  localStorage.setItem("beratbadan", beratbadan.value);
   localStorage.setItem("daerah", daerah.value);
 
   document.querySelector(".info").classList.add("hidden");
@@ -569,13 +297,12 @@ function kirim() {
   const nilai = Math.round((benar / soal.length) * 100);
 
   localStorage.setItem("nilai", nilai);
+  localStorage.setItem("jawabanUser", JSON.stringify(jawaban));
+  localStorage.setItem("bankSoal", JSON.stringify(soal));
 
   const fd = new FormData();
   fd.append("nama", localStorage.getItem("nama"));
-  fd.append("gender", localStorage.getItem("gender"));
   fd.append("sekolah", localStorage.getItem("sekolah"));
-  fd.append("tinggibadan", localStorage.getItem("tinggibadan"));
-  fd.append("beratbadan", localStorage.getItem("beratbadan"));
   fd.append("daerah", localStorage.getItem("daerah"));
   fd.append("nilai", nilai);
 
