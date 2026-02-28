@@ -1,5 +1,5 @@
 const API_URL =
-  "https://script.google.com/macros/s/AKfycbwuvrXFMQgGrjhGQ-dD_vo0v2W_P5lCUd7SaY_x82JNCl5wxC2985_bsAo1o5wrTJM/exec";
+  "https://script.google.com/macros/s/AKfycbw47sIBVyysFCVVJ5dfBWkOfss3_EeFz1mYDJgA2OXODSwpELFeajodblXDC7DH6ODoIw/exec";
 const perHalaman = 3;
 let waktu = 1200;
 
