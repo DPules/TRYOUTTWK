@@ -1,7 +1,7 @@
 const API_URL =
   "https://script.google.com/macros/s/AKfycbw47sIBVyysFCVVJ5dfBWkOfss3_EeFz1mYDJgA2OXODSwpELFeajodblXDC7DH6ODoIw/exec";
 const perHalaman = 3;
-let waktu = 1200;
+let waktu = 1800;
 
 let halaman = 0;
 let timer;
@@ -189,7 +189,10 @@ function mulaiUjian() {
     return alert("Lengkapi data!");
 
   localStorage.setItem("nama", nama.value);
+  localStorage.setItem("gender", gender.value);
   localStorage.setItem("sekolah", sekolah.value);
+  localStorage.setItem("tinggibadan", tinggibadan.value);
+  localStorage.setItem("beratbadan", beratbadan.value);
   localStorage.setItem("daerah", daerah.value);
 
   document.querySelector(".info").classList.add("hidden");
@@ -302,7 +305,10 @@ function kirim() {
 
   const fd = new FormData();
   fd.append("nama", localStorage.getItem("nama"));
+  fd.append("gender", localStorage.getItem("gender"));
   fd.append("sekolah", localStorage.getItem("sekolah"));
+  fd.append("tinggibadan", localStorage.getItem("tinggibadan"));
+  fd.append("beratbadan", localStorage.getItem("beratbadan"));
   fd.append("daerah", localStorage.getItem("daerah"));
   fd.append("nilai", nilai);
 
