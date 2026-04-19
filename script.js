@@ -1,6 +1,6 @@
 const API_URL =
   "https://script.google.com/macros/s/AKfycbw47sIBVyysFCVVJ5dfBWkOfss3_EeFz1mYDJgA2OXODSwpELFeajodblXDC7DH6ODoIw/exec";
-const perHalaman = 3;
+const perHalaman = 2;
 let waktu = 3600;
 // AMBIL ELEMENT DOM
 const nama = document.getElementById("nama");
@@ -24,189 +24,238 @@ let sudahSubmit = false;
 let jawaban = {};
 
 const soal = [
-  // 🔴 HARD LEVEL (UPGRADE CAT STYLE)
-
   {
-    t: "Dalam latihan Paskibraka, seorang anggota melihat rekannya sering melanggar aturan namun memiliki kemampuan fisik sangat baik. Jika kamu menjadi ketua tim, keputusan terbaik adalah…",
+    t: "Perbedaan gagasan para tokoh dalam sidang pertama BPUPK menjadi kekuatan karena...",
     p: [
-      "Membiarkan karena kemampuan fisiknya bagus",
-      "Menegur dan membina agar disiplin tanpa mengabaikan potensinya",
-      "Melaporkan dan mengeluarkan dari tim",
-      "Mengabaikan agar tidak menimbulkan konflik",
-    ],
-    j: 1,
-    e: "Pemimpin harus tegas namun tetap membina. Disiplin adalah nilai utama, tapi potensi tetap harus dikembangkan.",
-    lvl: "hard",
-  },
-
-  {
-    t: "Saat seleksi berlangsung, kamu melihat peserta lain mendapat bantuan jawaban dari luar. Sikap paling tepat adalah…",
-    p: [
-      "Ikut memanfaatkan situasi",
-      "Diam agar tidak terlibat",
-      "Melaporkan dengan cara yang bijak",
-      "Menegur langsung di depan umum",
+      "Mempercepat pengambilan keputusan tanpa debat",
+      "Mencerminkan dominasi satu kelompok",
+      "Menghasilkan kompromi yang mewakili kepentingan bangsa",
+      "Menghindari konflik antar tokoh",
     ],
     j: 2,
-    e: "Integritas lebih penting dari hasil. Melaporkan dengan bijak menjaga keadilan tanpa menciptakan konflik berlebihan.",
+    e: "Perbedaan justru menghasilkan kompromi yang mewakili seluruh bangsa.",
     lvl: "hard",
   },
-
   {
-    t: "Seorang anggota tim merasa tidak percaya diri karena sering gagal dalam latihan. Sebagai rekan tim, tindakan terbaik adalah…",
+    t: "Makna internasionalisme dalam pidato 1 Juni 1945 adalah...",
     p: [
-      "Membiarkannya agar belajar sendiri",
-      "Menggantinya dengan anggota lain",
-      "Memberikan dukungan dan membantu latihan",
-      "Menyuruhnya keluar dari tim",
+      "Indonesia tunduk pada negara lain",
+      "Nasionalisme dihilangkan",
+      "Kepentingan global lebih utama dari nasional",
+      "Nasionalisme seimbang dengan nilai kemanusiaan universal",
     ],
-    j: 2,
-    e: "Paskibraka menjunjung kebersamaan dan saling mendukung. Mental kuat dibangun bersama.",
-    lvl: "hard",
-  },
-
-  {
-    t: "Dalam kondisi tekanan tinggi saat seleksi, kamu merasa gugup dan hampir menyerah. Sikap terbaik adalah…",
-    p: [
-      "Menghentikan usaha",
-      "Mengikuti perasaan",
-      "Mengendalikan diri dan tetap fokus",
-      "Menyalahkan keadaan",
-    ],
-    j: 2,
-    e: "Mental resilience adalah kunci. Peserta terbaik adalah yang mampu mengendalikan diri dalam tekanan.",
-    lvl: "hard",
-  },
-
-  {
-    t: "Seorang pemimpin tim hanya fokus pada hasil tanpa memperhatikan kondisi anggotanya. Dampak jangka panjang yang paling mungkin adalah…",
-    p: [
-      "Tim semakin kuat",
-      "Anggota menjadi lebih disiplin",
-      "Turunnya moral dan kekompakan tim",
-      "Tidak ada dampak",
-    ],
-    j: 2,
-    e: "Kepemimpinan tanpa empati akan merusak solidaritas tim.",
-    lvl: "hard",
-  },
-
-  {
-    t: "Dalam upacara, terjadi kesalahan kecil dari anggota tim. Sebagai pemimpin, langkah terbaik adalah…",
-    p: [
-      "Langsung memarahi di depan umum",
-      "Mengabaikan kesalahan",
-      "Mengevaluasi setelah kegiatan selesai",
-      "Mengganti anggota tersebut",
-    ],
-    j: 2,
-    e: "Evaluasi dilakukan secara profesional, bukan emosional.",
-    lvl: "hard",
-  },
-
-  {
-    t: "Jika kamu harus memilih antara kepentingan pribadi dan kepentingan tim dalam seleksi, maka…",
-    p: [
-      "Memilih kepentingan pribadi",
-      "Memilih kepentingan tim",
-      "Mencari keuntungan pribadi",
-      "Menunda keputusan",
-    ],
-    j: 1,
-    e: "Paskibraka mengutamakan kepentingan bersama di atas individu.",
-    lvl: "hard",
-  },
-
-  {
-    t: "Seorang peserta memiliki nilai tinggi namun sikap kurang baik. Dalam seleksi Paskibraka, keputusan terbaik adalah…",
-    p: [
-      "Tetap meloloskan karena nilai tinggi",
-      "Meloloskan dengan syarat",
-      "Tidak meloloskan karena sikap adalah prioritas",
-      "Menunda keputusan",
-    ],
-    j: 2,
-    e: "Paskibraka menekankan karakter, bukan hanya kemampuan akademik.",
-    lvl: "hard",
-  },
-
-  {
-    t: "Dalam situasi konflik antar anggota tim, peran kamu sebagai anggota adalah…",
-    p: [
-      "Memihak salah satu",
-      "Menghindar",
-      "Menjadi penengah",
-      "Memperkeruh situasi",
-    ],
-    j: 2,
-    e: "Menjadi penengah menunjukkan kedewasaan dan jiwa kepemimpinan.",
-    lvl: "hard",
-  },
-
-  {
-    t: "Nilai utama yang harus dipegang seorang Paskibraka dalam setiap situasi sulit adalah…",
-    p: ["Keuntungan", "Popularitas", "Integritas", "Kekuasaan"],
-    j: 2,
-    e: "Integritas adalah fondasi utama seorang Paskibraka sejati.",
-    lvl: "hard",
-  },
-  // 🔴 SOAL PANCASILA (10 SOAL - HOTS & KONTEKSTUAL)
-
-  {
-    t: "Seorang siswa menolak bekerja sama dengan teman berbeda agama dalam tugas kelompok. Sikap tersebut bertentangan dengan nilai Pancasila terutama sila…",
-    p: ["Pertama", "Kedua", "Ketiga", "Keempat"],
-    j: 0,
-    e: "Sila pertama menekankan toleransi antar umat beragama.",
-    lvl: "medium",
-  },
-
-  {
-    t: "Dalam kehidupan sehari-hari, tindakan membantu teman tanpa membedakan latar belakang mencerminkan sila…",
-    p: ["Pertama", "Kedua", "Ketiga", "Kelima"],
-    j: 1,
-    e: "Sila kedua menekankan kemanusiaan yang adil dan beradab.",
-    lvl: "easy",
-  },
-
-  {
-    t: "Ketika terjadi konflik antar kelompok di sekolah, sikap yang mencerminkan Pancasila adalah…",
-    p: [
-      "Membela kelompok sendiri",
-      "Menghindari masalah",
-      "Mencari solusi bersama",
-      "Menyalahkan pihak lain",
-    ],
-    j: 2,
-    e: "Musyawarah dan persatuan menjadi solusi sesuai nilai Pancasila.",
-    lvl: "medium",
-  },
-
-  {
-    t: "Sikap mengutamakan kepentingan bangsa di atas kepentingan pribadi mencerminkan nilai sila…",
-    p: ["Kedua", "Ketiga", "Keempat", "Kelima"],
-    j: 1,
-    e: "Sila ketiga menekankan persatuan Indonesia.",
-    lvl: "easy",
-  },
-
-  {
-    t: "Dalam musyawarah, keputusan diambil berdasarkan kesepakatan bersama. Hal ini merupakan implementasi sila…",
-    p: ["Kedua", "Ketiga", "Keempat", "Kelima"],
-    j: 2,
-    e: "Sila keempat menekankan musyawarah mufakat.",
-    lvl: "easy",
-  },
-
-  {
-    t: "Seorang pemimpin yang adil dan tidak memihak mencerminkan nilai utama dari sila…",
-    p: ["Pertama", "Ketiga", "Keempat", "Kelima"],
     j: 3,
-    e: "Sila kelima menekankan keadilan sosial bagi seluruh rakyat.",
-    lvl: "medium",
+    e: "Internasionalisme menekankan keseimbangan nasionalisme dan kemanusiaan universal.",
+    lvl: "hard",
   },
-
   {
-    t: "Tindakan menyebarkan hoaks yang dapat memecah belah bangsa bertentangan dengan nilai sila…",
+    t: "Jika Pancasila tidak diamalkan dalam kehidupan, dampak yang terjadi adalah...",
+    p: [
+      "Stabilitas meningkat",
+      "Budaya demokrasi berkembang",
+      "Krisis moral dan sosial",
+      "Kesadaran hukum meningkat",
+    ],
+    j: 2,
+    e: "Tanpa pengamalan, nilai Pancasila tidak berfungsi sehingga terjadi krisis moral.",
+    lvl: "hard",
+  },
+  {
+    t: "Pidato 1 Juni 1945 penting karena...",
+    p: [
+      "Menjadi sumber hukum tertinggi",
+      "Menghapus perbedaan pendapat",
+      "Memberikan rumusan dasar negara secara sistematis",
+      "Menetapkan UUD 1945",
+    ],
+    j: 2,
+    e: "Pidato Soekarno memberikan konsep dasar negara secara sistematis.",
+    lvl: "hard",
+  },
+  {
+    t: "Pancasila sebagai ideologi negara berarti...",
+    p: [
+      "Aturan hukum tertinggi",
+      "Pedoman hidup yang dinamis dan terbuka",
+      "Simbol persatuan saja",
+      "Dasar pembentukan lembaga negara",
+    ],
+    j: 1,
+    e: "Ideologi adalah pedoman hidup yang dinamis, bukan sekadar simbol.",
+    lvl: "hard",
+  },
+  {
+    t: "Mematuhi hukum karena takut sanksi menunjukkan kesadaran hukum tingkat...",
+    p: ["Tinggi", "Ideologis", "Instrumental", "Kritis"],
+    j: 2,
+    e: "Level instrumental berarti patuh karena takut hukuman.",
+    lvl: "hard",
+  },
+  {
+    t: "Pernyataan yang salah tentang hubungan norma dan hukum adalah...",
+    p: [
+      "Hukum memiliki sanksi tegas",
+      "Semua norma memiliki kekuatan hukum",
+      "Norma menjadi dasar hukum",
+      "Hukum mengatur masyarakat",
+    ],
+    j: 1,
+    e: "Tidak semua norma menjadi hukum, hanya norma tertentu yang dilegalkan.",
+    lvl: "hard",
+  },
+  {
+    t: "Menuntut hak tanpa menjalankan kewajiban menyebabkan...",
+    p: [
+      "Ketimpangan ekonomi",
+      "Ketidakseimbangan sosial",
+      "Konflik budaya",
+      "Stabilitas nasional",
+    ],
+    j: 1,
+    e: "Hak dan kewajiban harus seimbang untuk menjaga keharmonisan sosial.",
+    lvl: "hard",
+  },
+  {
+    t: "Jika suatu peraturan bertentangan dengan Pancasila, maka harus...",
+    p: [
+      "Tetap dijalankan",
+      "Diabaikan",
+      "Direvisi atau dibatalkan",
+      "Dipertahankan",
+    ],
+    j: 2,
+    e: "Pancasila adalah sumber hukum tertinggi, jadi aturan harus sesuai dengannya.",
+    lvl: "hard",
+  },
+  {
+    t: "Tujuan hierarki peraturan perundang-undangan adalah...",
+    p: [
+      "Membatasi rakyat",
+      "Mengatur kekuasaan lembaga",
+      "Menjamin keselarasan hukum",
+      "Mempercepat pembuatan hukum",
+    ],
+    j: 2,
+    e: "Hierarki memastikan tidak ada aturan yang bertentangan satu sama lain.",
+    lvl: "hard",
+  },
+  {
+    t: "Makna Bhinneka Tunggal Ika adalah...",
+    p: [
+      "Menghilangkan perbedaan",
+      "Menyatukan dalam perbedaan",
+      "Menyeragamkan budaya",
+      "Mengutamakan mayoritas",
+    ],
+    j: 1,
+    e: "Bhinneka Tunggal Ika berarti berbeda-beda tetapi tetap satu.",
+    lvl: "hard",
+  },
+  {
+    t: "Dampak utama jika keberagaman tidak dikelola dengan baik adalah...",
+    p: [
+      "Kerja sama meningkat",
+      "Pembangunan cepat",
+      "Konflik sosial",
+      "Stabilitas meningkat",
+    ],
+    j: 2,
+    e: "Tanpa pengelolaan yang baik, keberagaman dapat memicu konflik.",
+    lvl: "hard",
+  },
+  {
+    t: "Nilai gotong royong mencerminkan sila...",
+    p: ["Pertama", "Kedua", "Ketiga", "Kelima"],
+    j: 2,
+    e: "Gotong royong erat dengan persatuan Indonesia (sila ke-3).",
+    lvl: "hard",
+  },
+  {
+    t: "Keberagaman sebagai kekuatan bangsa disebut sebagai...",
+    p: [
+      "Ancaman sosial",
+      "Penghambat pembangunan",
+      "Modal sosial",
+      "Kelemahan negara",
+    ],
+    j: 2,
+    e: "Keberagaman dapat menjadi modal sosial untuk pembangunan.",
+    lvl: "hard",
+  },
+  {
+    t: "Sikap terbaik dalam menjaga harmoni keberagaman adalah...",
+    p: [
+      "Menghindari kelompok lain",
+      "Eksklusif pada budaya sendiri",
+      "Menghargai perbedaan dan bekerja sama",
+      "Mengikuti mayoritas",
+    ],
+    j: 2,
+    e: "Toleransi dan kerja sama adalah kunci harmoni.",
+    lvl: "hard",
+  },
+  {
+    t: "Solusi konflik antar suku sesuai nilai Pancasila adalah...",
+    p: [
+      "Memisahkan wilayah",
+      "Penegakan hukum tanpa dialog",
+      "Dialog dan gotong royong",
+      "Mengutamakan mayoritas",
+    ],
+    j: 2,
+    e: "Pendekatan dialog dan gotong royong mencerminkan nilai Pancasila.",
+    lvl: "hard",
+  },
+  {
+    t: "Perubahan rumusan Piagam Jakarta menjadi Pancasila menunjukkan bahwa para pendiri bangsa mengutamakan...",
+    p: [
+      "Kepentingan golongan tertentu",
+      "Persatuan dan kesatuan bangsa",
+      "Dominasi mayoritas",
+      "Kepentingan internasional",
+    ],
+    j: 1,
+    e: "Perubahan tersebut dilakukan demi menjaga persatuan bangsa.",
+    lvl: "hard",
+  },
+  {
+    t: "Nilai ketuhanan dalam Pancasila bersifat inklusif, artinya...",
+    p: [
+      "Hanya berlaku untuk agama tertentu",
+      "Mengutamakan satu keyakinan",
+      "Menghormati semua agama dan kepercayaan",
+      "Tidak mengatur kehidupan beragama",
+    ],
+    j: 2,
+    e: "Pancasila menjamin kebebasan beragama secara adil.",
+    lvl: "hard",
+  },
+  {
+    t: "Jika hukum ditegakkan secara tebang pilih, maka dampaknya adalah...",
+    p: [
+      "Meningkatkan kepercayaan masyarakat",
+      "Menurunkan kesadaran hukum",
+      "Memperkuat keadilan sosial",
+      "Meningkatkan kepatuhan hukum",
+    ],
+    j: 1,
+    e: "Ketidakadilan hukum membuat masyarakat kehilangan kepercayaan.",
+    lvl: "hard",
+  },
+  {
+    t: "Fungsi utama norma sosial dalam masyarakat adalah...",
+    p: [
+      "Memberikan sanksi hukum",
+      "Mengatur perilaku agar tertib",
+      "Menentukan kekuasaan",
+      "Menggantikan hukum negara",
+    ],
+    j: 1,
+    e: "Norma sosial berfungsi mengatur perilaku agar tercipta keteraturan.",
+    lvl: "hard",
+  },
+  {
+    t: "Sikap intoleransi dalam masyarakat bertentangan dengan nilai Pancasila terutama sila...",
     p: [
       "Pertama dan kedua",
       "Kedua dan ketiga",
@@ -214,365 +263,351 @@ const soal = [
       "Keempat dan kelima",
     ],
     j: 1,
-    e: "Hoaks merusak kemanusiaan dan persatuan.",
+    e: "Intoleransi melanggar nilai kemanusiaan dan persatuan.",
     lvl: "hard",
   },
-
   {
-    t: "Menghargai hasil keputusan bersama meskipun berbeda dengan pendapat pribadi menunjukkan sikap…",
-    p: ["Individualisme", "Egoisme", "Demokratis", "Dominasi"],
-    j: 2,
-    e: "Sikap demokratis adalah inti sila keempat.",
-    lvl: "medium",
-  },
-
-  {
-    t: "Ketimpangan sosial dalam masyarakat menunjukkan belum optimalnya penerapan sila…",
-    p: ["Pertama", "Kedua", "Ketiga", "Kelima"],
-    j: 3,
-    e: "Sila kelima menekankan keadilan sosial.",
-    lvl: "medium",
-  },
-
-  {
-    t: "Menjaga kerukunan antar suku dan budaya merupakan implementasi utama dari sila…",
-    p: ["Pertama", "Kedua", "Ketiga", "Keempat"],
-    j: 2,
-    e: "Sila ketiga menekankan persatuan dalam keberagaman.",
-    lvl: "easy",
-  },
-  // 🔴 SOAL PENGETAHUAN PASKIBRAKA (10 SOAL)
-
-  {
-    t: "Pasukan Pengibar Bendera Pusaka (Paskibraka) pertama kali dibentuk pada tahun…",
-    p: ["1945", "1946", "1947", "1950"],
-    j: 1,
-    e: "Paskibraka pertama kali dibentuk tahun 1946 atas gagasan Husein Mutahar.",
-    lvl: "medium",
-  },
-
-  {
-    t: "Tokoh yang dikenal sebagai penggagas pembentukan Paskibraka adalah…",
-    p: ["Soekarno", "Husein Mutahar", "Soeharto", "Ahmad Yani"],
-    j: 1,
-    e: "Husein Mutahar adalah tokoh utama di balik lahirnya Paskibraka.",
-    lvl: "easy",
-  },
-
-  {
-    t: "Tugas utama Paskibraka adalah…",
+    t: "Kesadaran hukum yang tinggi ditunjukkan dengan perilaku...",
     p: [
-      "Mengamankan upacara",
-      "Mengibarkan dan menurunkan bendera pusaka",
-      "Memimpin upacara",
-      "Mengatur peserta upacara",
-    ],
-    j: 1,
-    e: "Tugas utama Paskibraka adalah mengibarkan dan menurunkan bendera.",
-    lvl: "easy",
-  },
-
-  {
-    t: "Jumlah anggota Paskibraka dalam satu tim formasi nasional adalah…",
-    p: ["17 orang", "8 orang", "45 orang", "70 orang"],
-    j: 2,
-    e: "Formasi lengkap terdiri dari 70 orang (17-8-45).",
-    lvl: "medium",
-  },
-
-  {
-    t: "Makna angka 17-8-45 dalam Paskibraka adalah…",
-    p: [
-      "Jumlah anggota tim",
-      "Tanggal kemerdekaan Indonesia",
-      "Jumlah provinsi",
-      "Kode latihan",
-    ],
-    j: 1,
-    e: "17-8-45 melambangkan tanggal kemerdekaan Indonesia.",
-    lvl: "easy",
-  },
-
-  {
-    t: "Peran Paskibraka tidak hanya saat upacara, tetapi juga sebagai…",
-    p: [
-      "Panitia kegiatan",
-      "Duta Pancasila",
-      "Petugas keamanan",
-      "Pengatur acara",
-    ],
-    j: 1,
-    e: "Paskibraka berperan sebagai Duta Pancasila dalam kehidupan sehari-hari.",
-    lvl: "medium",
-  },
-
-  {
-    t: "Sikap utama yang harus dimiliki oleh anggota Paskibraka adalah…",
-    p: ["Santai", "Disiplin", "Bebas", "Santai tapi tegas"],
-    j: 1,
-    e: "Disiplin adalah nilai utama dalam Paskibraka.",
-    lvl: "easy",
-  },
-
-  {
-    t: "Latihan baris-berbaris (PBB) dalam Paskibraka bertujuan untuk…",
-    p: [
-      "Menambah kekuatan fisik saja",
-      "Melatih kekompakan dan kedisiplinan",
-      "Meningkatkan kecepatan",
-      "Melatih individu",
-    ],
-    j: 1,
-    e: "PBB melatih disiplin, kekompakan, dan kerja sama tim.",
-    lvl: "medium",
-  },
-
-  {
-    t: "Upacara pengibaran bendera memiliki makna utama sebagai…",
-    p: [
-      "Kegiatan rutin",
-      "Simbol penghormatan kepada bangsa",
-      "Acara formal",
-      "Kegiatan sekolah",
-    ],
-    j: 1,
-    e: "Upacara adalah bentuk penghormatan kepada negara dan perjuangan.",
-    lvl: "medium",
-  },
-
-  {
-    t: "Sikap hormat kepada bendera saat upacara mencerminkan…",
-    p: ["Kebiasaan", "Formalitas", "Nasionalisme", "Rutinitas"],
-    j: 2,
-    e: "Menghormati bendera adalah bentuk nasionalisme.",
-    lvl: "easy",
-  },
-  // 🔴 SOAL SEJARAH INDONESIA (10 SOAL)
-
-  {
-    t: "Peristiwa Proklamasi Kemerdekaan Indonesia pada 17 Agustus 1945 dilatarbelakangi oleh…",
-    p: [
-      "Tekanan Belanda",
-      "Kekalahan Jepang dalam Perang Dunia II",
-      "Keinginan Sekutu",
-      "Perundingan internasional",
-    ],
-    j: 1,
-    e: "Kekalahan Jepang membuka peluang bagi Indonesia untuk memproklamasikan kemerdekaan.",
-    lvl: "medium",
-  },
-
-  {
-    t: "Tokoh yang berperan dalam perumusan teks Proklamasi adalah…",
-    p: [
-      "Soekarno, Hatta, dan Ahmad Soebardjo",
-      "Soekarno, Sudirman, dan Sjahrir",
-      "Hatta, Tan Malaka, dan Soedirman",
-      "Soekarno, Soeharto, dan Hatta",
-    ],
-    j: 0,
-    e: "Teks proklamasi dirumuskan oleh Soekarno, Hatta, dan Ahmad Soebardjo.",
-    lvl: "easy",
-  },
-
-  {
-    t: "Peristiwa Rengasdengklok memiliki makna penting karena…",
-    p: [
-      "Tempat penyusunan UUD",
-      "Mendesak Soekarno-Hatta untuk segera memproklamasikan kemerdekaan",
-      "Tempat pertempuran",
-      "Awal penjajahan Jepang",
-    ],
-    j: 1,
-    e: "Golongan muda mendesak proklamasi tanpa campur tangan Jepang.",
-    lvl: "medium",
-  },
-
-  {
-    t: "Tujuan utama dibentuknya BPUPKI adalah…",
-    p: [
-      "Mempersiapkan kemerdekaan Indonesia",
-      "Mengatur pemerintahan Jepang",
-      "Membentuk tentara",
-      "Mengawasi rakyat",
-    ],
-    j: 0,
-    e: "BPUPKI dibentuk untuk mempersiapkan kemerdekaan Indonesia.",
-    lvl: "easy",
-  },
-
-  {
-    t: "Sidang pertama BPUPKI menghasilkan…",
-    p: ["UUD 1945", "Pancasila", "Proklamasi", "Kabinet"],
-    j: 1,
-    e: "Sidang pertama membahas dasar negara yang melahirkan Pancasila.",
-    lvl: "medium",
-  },
-
-  {
-    t: "Perang Diponegoro terjadi karena…",
-    p: [
-      "Perebutan kekuasaan",
-      "Penolakan terhadap kebijakan kolonial Belanda",
-      "Masalah ekonomi saja",
-      "Persaingan antar kerajaan",
-    ],
-    j: 1,
-    e: "Perang Diponegoro dipicu oleh penindasan dan kebijakan Belanda.",
-    lvl: "medium",
-  },
-
-  {
-    t: "Sumpah Pemuda tahun 1928 memiliki makna penting yaitu…",
-    p: [
-      "Awal penjajahan",
-      "Persatuan bangsa Indonesia",
-      "Perlawanan fisik",
-      "Pembentukan pemerintah",
-    ],
-    j: 1,
-    e: "Sumpah Pemuda menegaskan satu tanah air, bangsa, dan bahasa.",
-    lvl: "easy",
-  },
-
-  {
-    t: "Peristiwa Bandung Lautan Api menunjukkan…",
-    p: [
-      "Kekalahan Indonesia",
-      "Perlawanan tanpa strategi",
-      "Semangat rela berkorban demi bangsa",
-      "Kemenangan besar",
+      "Taat karena takut sanksi",
+      "Taat karena diawasi",
+      "Taat karena memahami pentingnya hukum",
+      "Taat karena tekanan sosial",
     ],
     j: 2,
-    e: "Rakyat Bandung membakar kota demi mengusir penjajah.",
-    lvl: "medium",
+    e: "Kesadaran hukum sejati berasal dari pemahaman, bukan paksaan.",
+    lvl: "hard",
   },
-
   {
-    t: "Konferensi Meja Bundar (KMB) menghasilkan…",
+    t: "Dalam kehidupan demokrasi, Pancasila berfungsi sebagai...",
     p: [
-      "Kemerdekaan Indonesia",
-      "Pengakuan kedaulatan Indonesia oleh Belanda",
-      "Pembentukan UUD",
-      "Perang baru",
+      "Pembatas kebebasan rakyat",
+      "Pedoman dalam mengambil keputusan bersama",
+      "Alat kekuasaan pemerintah",
+      "Pengganti hukum negara",
     ],
     j: 1,
-    e: "Belanda mengakui kedaulatan Indonesia pada tahun 1949.",
-    lvl: "medium",
+    e: "Demokrasi Indonesia berlandaskan nilai Pancasila.",
+    lvl: "hard",
   },
-
   {
-    t: "Tujuan utama perjuangan bangsa Indonesia melawan penjajah adalah…",
-    p: ["Kekuasaan", "Kemerdekaan", "Kekayaan", "Pengaruh"],
-    j: 1,
-    e: "Perjuangan bertujuan untuk mencapai kemerdekaan.",
-    lvl: "easy",
-  },
-  // 🔴 SOAL PENGETAHUAN UMUM PANCASILA (10 SOAL)
-
-  {
-    t: "Pancasila sebagai dasar negara memiliki fungsi utama sebagai…",
+    t: "Perilaku diskriminasi dalam masyarakat dapat menyebabkan...",
     p: [
-      "Ideologi sementara",
-      "Dasar dalam penyelenggaraan negara",
-      "Simbol negara",
-      "Alat politik",
+      "Persatuan meningkat",
+      "Konflik sosial",
+      "Kerja sama meningkat",
+      "Stabilitas nasional",
     ],
     j: 1,
-    e: "Pancasila menjadi dasar dalam setiap penyelenggaraan negara.",
-    lvl: "easy",
+    e: "Diskriminasi memicu ketidakadilan dan konflik.",
+    lvl: "hard",
   },
-
   {
-    t: "Nilai Pancasila yang bersifat fleksibel dan dapat diterapkan sesuai perkembangan zaman disebut…",
-    p: ["Nilai dasar", "Nilai instrumental", "Nilai praksis", "Nilai mutlak"],
-    j: 2,
-    e: "Nilai praksis adalah penerapan nyata dalam kehidupan sehari-hari.",
-    lvl: "medium",
-  },
-
-  {
-    t: "Sikap menghormati keputusan bersama meskipun berbeda pendapat merupakan implementasi dari sila…",
-    p: ["Kedua", "Ketiga", "Keempat", "Kelima"],
-    j: 2,
-    e: "Sila keempat menekankan musyawarah dan menghormati hasil keputusan.",
-    lvl: "easy",
-  },
-
-  {
-    t: "Pancasila sebagai ideologi terbuka berarti…",
+    t: "Gotong royong dalam masyarakat modern dapat diwujudkan dalam bentuk...",
     p: [
-      "Dapat diubah kapan saja",
-      "Menerima pengaruh asing tanpa batas",
-      "Bersifat dinamis tanpa mengubah nilai dasar",
-      "Tidak memiliki nilai tetap",
-    ],
-    j: 2,
-    e: "Ideologi terbuka berarti fleksibel dalam penerapan, tetapi nilai dasar tetap.",
-    lvl: "medium",
-  },
-
-  {
-    t: "Perilaku diskriminasi terhadap orang lain bertentangan dengan sila…",
-    p: ["Pertama", "Kedua", "Ketiga", "Keempat"],
-    j: 1,
-    e: "Sila kedua menekankan persamaan derajat manusia.",
-    lvl: "easy",
-  },
-
-  {
-    t: "Contoh penerapan sila ketiga dalam kehidupan sehari-hari adalah…",
-    p: ["Beribadah", "Menolong sesama", "Menjaga persatuan", "Musyawarah"],
-    j: 2,
-    e: "Sila ketiga menekankan persatuan Indonesia.",
-    lvl: "easy",
-  },
-
-  {
-    t: "Jika seseorang lebih mementingkan kepentingan pribadi dibanding kepentingan bersama, maka ia melanggar nilai…",
-    p: ["Persatuan", "Keadilan sosial", "Kemanusiaan", "Musyawarah"],
-    j: 0,
-    e: "Mementingkan diri sendiri bertentangan dengan nilai persatuan.",
-    lvl: "medium",
-  },
-
-  {
-    t: "Salah satu bentuk implementasi sila kelima adalah…",
-    p: [
-      "Beribadah sesuai agama",
-      "Menghargai perbedaan",
-      "Bersikap adil kepada semua orang",
-      "Mengutamakan musyawarah",
-    ],
-    j: 2,
-    e: "Sila kelima berkaitan dengan keadilan sosial.",
-    lvl: "easy",
-  },
-
-  {
-    t: "Pancasila digali dari nilai-nilai yang hidup dalam…",
-    p: [
-      "Budaya asing",
-      "Masyarakat Indonesia",
-      "Pemerintah",
-      "Organisasi internasional",
+      "Kompetisi antar individu",
+      "Kerja sama dalam kegiatan sosial",
+      "Dominasi kelompok tertentu",
+      "Mengutamakan kepentingan pribadi",
     ],
     j: 1,
-    e: "Pancasila berasal dari nilai budaya bangsa Indonesia.",
-    lvl: "medium",
+    e: "Gotong royong tetap relevan dalam bentuk kerja sama sosial.",
+    lvl: "hard",
   },
-
   {
-    t: "Jika terjadi perbedaan pendapat dalam masyarakat, maka penyelesaian yang sesuai Pancasila adalah…",
+    t: "Pelanggaran hukum yang dibiarkan akan berdampak pada...",
     p: [
-      "Voting cepat",
-      "Musyawarah mufakat",
+      "Meningkatkan keadilan",
+      "Menurunkan wibawa hukum",
+      "Meningkatkan kesejahteraan",
+      "Memperkuat persatuan",
+    ],
+    j: 1,
+    e: "Jika pelanggaran dibiarkan, hukum kehilangan wibawa.",
+    lvl: "hard",
+  },
+  {
+    t: "Salah satu ciri masyarakat yang menjunjung tinggi hukum adalah...",
+    p: [
+      "Banyaknya pelanggaran hukum",
+      "Taat aturan tanpa paksaan",
+      "Takut terhadap aparat",
+      "Bergantung pada sanksi",
+    ],
+    j: 1,
+    e: "Kesadaran hukum ditunjukkan dengan ketaatan tanpa paksaan.",
+    lvl: "hard",
+  },
+  {
+    t: "Mengutamakan musyawarah dalam menyelesaikan masalah mencerminkan sila...",
+    p: ["Pertama", "Kedua", "Keempat", "Kelima"],
+    j: 2,
+    e: "Musyawarah adalah nilai utama dalam sila ke-4.",
+    lvl: "hard",
+  },
+  {
+    t: "Keberagaman budaya di Indonesia dapat memperkuat identitas nasional jika...",
+    p: [
+      "Dihilangkan perbedaannya",
+      "Dikelola dengan sikap saling menghargai",
+      "Didominasi budaya tertentu",
+      "Dibatasi perkembangannya",
+    ],
+    j: 1,
+    e: "Pengelolaan yang baik menjadikan keberagaman sebagai kekuatan.",
+    lvl: "hard",
+  },
+  {
+    t: "Jika masyarakat lebih mengutamakan kepentingan pribadi daripada kepentingan umum, maka akan terjadi...",
+    p: [
+      "Persatuan meningkat",
+      "Keadilan sosial terwujud",
+      "Disintegrasi sosial",
+      "Stabilitas nasional",
+    ],
+    j: 2,
+    e: "Egoisme dapat merusak persatuan dan menimbulkan disintegrasi.",
+    lvl: "hard",
+  },
+  {
+    t: "Dalam formasi 17-8-45, jika terjadi kesalahan pada pasukan 8 saat pengibaran, dampak paling krusial adalah...",
+    p: [
+      "Kesalahan tidak berpengaruh karena bukan pasukan inti",
+      "Mengganggu ritme dan keselarasan seluruh rangkaian upacara",
+      "Hanya berdampak pada pasukan 45",
+      "Tidak mempengaruhi pengibaran bendera",
+    ],
+    j: 1,
+    e: "Pasukan 8 berperan sebagai pengiring, kesalahan akan merusak sinkronisasi.",
+    lvl: "hard",
+  },
+  {
+    t: "Jika seorang anggota Paskibraka memiliki kemampuan fisik tinggi tetapi tidak disiplin, maka risiko terbesar adalah...",
+    p: [
+      "Menjadi pemimpin pasukan",
+      "Mengganggu kekompakan tim",
+      "Meningkatkan performa individu",
+      "Mempercepat latihan",
+    ],
+    j: 1,
+    e: "Disiplin lebih penting dari kemampuan individu dalam tim Paskibraka.",
+    lvl: "hard",
+  },
+  {
+    t: "Makna utama dari latihan PBB yang dilakukan secara berulang adalah...",
+    p: [
+      "Membentuk kekuatan fisik",
+      "Menciptakan keseragaman gerakan dan mental kolektif",
+      "Melatih kecepatan individu",
+      "Mengurangi kesalahan teknis saja",
+    ],
+    j: 1,
+    e: "PBB bertujuan membentuk kekompakan dan kesatuan gerak tim.",
+    lvl: "hard",
+  },
+  {
+    t: "Dalam kondisi cuaca buruk saat upacara, sikap yang paling mencerminkan jiwa Paskibraka adalah...",
+    p: [
+      "Menghentikan tugas demi keselamatan pribadi",
+      "Tetap menjalankan tugas dengan penuh tanggung jawab",
+      "Menunggu instruksi tanpa inisiatif",
+      "Mengurangi standar pelaksanaan",
+    ],
+    j: 1,
+    e: "Tanggung jawab dan dedikasi menjadi nilai utama Paskibraka.",
+    lvl: "hard",
+  },
+  {
+    t: "Jika terjadi perbedaan pendapat dalam tim saat latihan, solusi terbaik sesuai nilai Paskibraka adalah...",
+    p: [
+      "Mengikuti pendapat mayoritas tanpa diskusi",
+      "Menyelesaikan dengan musyawarah dan menghargai pendapat",
+      "Menyerahkan sepenuhnya ke pelatih",
       "Menghindari konflik",
-      "Keputusan sepihak",
     ],
     j: 1,
-    e: "Musyawarah mufakat adalah ciri khas demokrasi Pancasila.",
-    lvl: "easy",
+    e: "Musyawarah mencerminkan nilai kebersamaan dan kepemimpinan.",
+    lvl: "hard",
+  },
+  {
+    t: "Peran komandan pasukan dalam Paskibraka yang paling penting adalah...",
+    p: [
+      "Memberikan perintah tanpa koordinasi",
+      "Mengatur ritme dan menjaga kekompakan seluruh pasukan",
+      "Menggantikan tugas anggota",
+      "Menentukan formasi sendiri",
+    ],
+    j: 1,
+    e: "Komandan bertanggung jawab atas koordinasi dan kekompakan.",
+    lvl: "hard",
+  },
+  {
+    t: "Jika salah satu anggota melakukan kesalahan saat gladi, sikap tim yang paling tepat adalah...",
+    p: [
+      "Menyalahkan individu tersebut",
+      "Mengabaikan kesalahan",
+      "Melakukan evaluasi bersama dan memperbaiki",
+      "Mengeluarkan anggota dari tim",
+    ],
+    j: 2,
+    e: "Evaluasi bersama meningkatkan kualitas tim.",
+    lvl: "hard",
+  },
+  {
+    t: "Nilai nasionalisme dalam Paskibraka paling tepat ditunjukkan melalui...",
+    p: [
+      "Mengutamakan prestasi individu",
+      "Menjalankan tugas dengan penuh dedikasi untuk negara",
+      "Menghindari kesalahan pribadi",
+      "Mengikuti aturan tanpa memahami makna",
+    ],
+    j: 1,
+    e: "Nasionalisme tercermin dari dedikasi terhadap tugas negara.",
+    lvl: "hard",
+  },
+  {
+    t: "Kegagalan dalam sinkronisasi gerakan Paskibraka biasanya disebabkan oleh...",
+    p: [
+      "Kurangnya kemampuan fisik",
+      "Kurangnya latihan individu",
+      "Kurangnya kekompakan dan konsentrasi tim",
+      "Kesalahan pelatih",
+    ],
+    j: 2,
+    e: "Sinkronisasi sangat bergantung pada kekompakan tim.",
+    lvl: "hard",
+  },
+  {
+    t: "Makna menjadi Paskibraka tidak hanya saat bertugas, tetapi juga setelahnya, yaitu...",
+    p: [
+      "Menjadi simbol upacara saja",
+      "Menjadi teladan dalam kehidupan bermasyarakat",
+      "Mengikuti kegiatan seremonial",
+      "Mengutamakan kepentingan pribadi",
+    ],
+    j: 1,
+    e: "Nilai Paskibraka harus diterapkan dalam kehidupan sehari-hari.",
+    lvl: "hard",
+  },
+  {
+    t: "Faktor utama yang mendorong lahirnya pergerakan nasional Indonesia pada awal abad ke-20 adalah...",
+    p: [
+      "Kemenangan Jepang atas Rusia",
+      "Kebijakan politik etis Belanda",
+      "Masuknya budaya Barat",
+      "Perlawanan kerajaan tradisional",
+    ],
+    j: 1,
+    e: "Politik etis membuka akses pendidikan yang memicu kesadaran nasional.",
+    lvl: "hard",
+  },
+  {
+    t: "Peristiwa Sumpah Pemuda 1928 memiliki makna penting karena...",
+    p: [
+      "Mengakhiri penjajahan Belanda",
+      "Menyatukan berbagai organisasi pemuda dalam satu identitas bangsa",
+      "Membentuk pemerintahan Indonesia",
+      "Memulai perlawanan fisik terhadap penjajah",
+    ],
+    j: 1,
+    e: "Sumpah Pemuda menegaskan satu bangsa, satu tanah air, dan satu bahasa.",
+    lvl: "hard",
+  },
+  {
+    t: "Perbedaan utama antara BPUPK dan PPKI adalah...",
+    p: [
+      "BPUPK dibentuk Jepang, PPKI dibentuk Indonesia",
+      "BPUPK bertugas merumuskan, PPKI mengesahkan dan mempersiapkan kemerdekaan",
+      "BPUPK lebih berkuasa dari PPKI",
+      "PPKI tidak memiliki peran penting",
+    ],
+    j: 1,
+    e: "BPUPK merumuskan dasar negara, PPKI mengesahkan dan menjalankan.",
+    lvl: "hard",
+  },
+  {
+    t: "Peristiwa Rengasdengklok menunjukkan bahwa...",
+    p: [
+      "Golongan tua menolak kemerdekaan",
+      "Golongan muda ingin mempercepat proklamasi tanpa campur tangan Jepang",
+      "Jepang mendukung kemerdekaan Indonesia",
+      "Tidak ada perbedaan pendapat",
+    ],
+    j: 1,
+    e: "Golongan muda mendesak proklamasi segera dilaksanakan.",
+    lvl: "hard",
+  },
+  {
+    t: "Makna Proklamasi Kemerdekaan Indonesia bagi bangsa Indonesia adalah...",
+    p: [
+      "Akhir dari perjuangan",
+      "Awal terbentuknya negara merdeka dan berdaulat",
+      "Pengakuan internasional langsung",
+      "Pembentukan pemerintahan kolonial baru",
+    ],
+    j: 1,
+    e: "Proklamasi adalah awal berdirinya negara Indonesia.",
+    lvl: "hard",
+  },
+  {
+    t: "Salah satu faktor internal yang menyebabkan runtuhnya VOC adalah...",
+    p: [
+      "Serangan kerajaan Nusantara",
+      "Korupsi dan manajemen yang buruk",
+      "Persaingan dengan Inggris",
+      "Krisis ekonomi global",
+    ],
+    j: 1,
+    e: "Korupsi dan buruknya pengelolaan menyebabkan kebangkrutan VOC.",
+    lvl: "hard",
+  },
+  {
+    t: "Tujuan utama sistem tanam paksa (Cultuurstelsel) adalah...",
+    p: [
+      "Mensejahterakan rakyat Indonesia",
+      "Mengisi kas Belanda yang kosong",
+      "Meningkatkan produksi lokal",
+      "Membantu petani Indonesia",
+    ],
+    j: 1,
+    e: "Tanam paksa bertujuan mengisi kas Belanda setelah krisis ekonomi.",
+    lvl: "hard",
+  },
+  {
+    t: "Perlawanan rakyat Indonesia terhadap penjajah pada abad ke-19 umumnya mengalami kegagalan karena...",
+    p: [
+      "Kurangnya semangat juang",
+      "Tidak adanya persatuan dan koordinasi nasional",
+      "Persenjataan lengkap penjajah",
+      "Kurangnya pemimpin",
+    ],
+    j: 1,
+    e: "Perlawanan bersifat kedaerahan sehingga mudah dipatahkan.",
+    lvl: "hard",
+  },
+  {
+    t: "Peran Jepang dalam kemerdekaan Indonesia dapat dianalisis sebagai...",
+    p: [
+      "Sepenuhnya membantu Indonesia",
+      "Tidak berpengaruh sama sekali",
+      "Memberi peluang sekaligus tekanan bagi kemerdekaan",
+      "Menghambat seluruh proses kemerdekaan",
+    ],
+    j: 2,
+    e: "Jepang memberi peluang melalui organisasi, tetapi tetap memiliki kepentingan sendiri.",
+    lvl: "hard",
+  },
+  {
+    t: "Konferensi Meja Bundar (KMB) memiliki dampak penting bagi Indonesia yaitu...",
+    p: [
+      "Pengakuan kedaulatan secara penuh dari Belanda",
+      "Kembali ke bentuk negara kesatuan",
+      "Pembentukan pemerintahan kolonial baru",
+      "Penghapusan semua hutang Indonesia",
+    ],
+    j: 0,
+    e: "KMB menghasilkan pengakuan kedaulatan Indonesia oleh Belanda.",
+    lvl: "hard",
   },
 ];
 
